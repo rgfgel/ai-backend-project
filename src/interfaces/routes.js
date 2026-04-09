@@ -6,8 +6,8 @@ module.exports = {
     res.end("API funcionando");
   },
 
-  "/status": (req, res) => {
-    const result = getStatus();
+  "/status": async (req, res) => {
+    const result = await getStatus();
 
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(result));
